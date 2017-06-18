@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head>
+<meta charset="UTF-8">
+<title>London Craft Beers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="custom_javascript/poimap.js"></script>
+<script src="custom_javascript/database.js"></script>
+
+<link rel="stylesheet" href="css/themes/MainTheme.css" />
+<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body id="book-body">	
+<div data-role="page" id="booking" >
+
+  <!-- Booking Header Content Starts -->
+  <div id="londoncraftbeer" data-role="header" data-theme="b" data-add-back-btn="true" data-direction="reverse">
+    <h1>London Craft Beer</h1>
+  </div>
+  <!-- Booking Header Content Ends -->
+  <!-- Booking Content Starts -->
+  
+  <div id="bookheader">
+	<!-- Will be filled by Javascript -->
+  </div>
+  
+  <div id="imagehere">
+  <!-- Will be filled by Javascript -->
+  <p></p>
+  </div>
+  
+  	<div id="bookingdetailsheader">
+    Booking details:
+    </div>
+    
+	<div class="ui-field-contain" id="bookingdata">
+    
+    <fieldset class="ui-grid-a"> <!-- jQuery content formatting. Puts time/date on the same row. -->
+    <div class="ui-block-a"> <!-- Left side grid -->
+  	<label for="date">Date:</label>
+	<input type="date" data-role="date" name="gimmiedate"> <!-- User must enter a date -->
+    </div>
+    
+    <div class="ui-block-b"> <!-- Right side grid -->
+    <label for="time">Time:</label>
+	<input type="time" data-role="time" name="gimmietime"> <!-- User must enter a time -->
+	</div>
+    </fieldset> <!-- End fieldset so number of guests has its own row. -->
+    
+    <div>	
+    <label for="guests">Number of guests:</label>
+	<input type="number" data-role="number" name="gimmienumber"> <!-- User must enter a number -->
+	</div>
+	</div>
+    
+    <a href="payment.html" class="ui-btn ui-corner-all" id="booknow" data-ajax="false">BOOK NOW</a> <!-- Button goes to Payment page -->
+
+<script>
+	document.getElementById("bookheader").innerHTML = "Book a Table at " + pubname;
+	document.getElementById("imagehere").innerHTML = "<img class=\"picture\" src=\"images/" + pubname + ".png\" alt=\"pub pic here\" id=\"pubpicture_book\"></div>"
+</script>
+</div>
+
+<!-- Footer to be used in every page. -->
+<div data-role="footer" data-position="fixed">
+<h4>London Craft Beer</h4>
+<h4>&copy; 2016 All rights reserved.</h4>
+</div>
+
+<!-- Booking Content Ends -->
+</body>
+</html>

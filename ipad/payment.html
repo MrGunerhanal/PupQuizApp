@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css"/>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="css/themes/MainTheme.css"/>
+<link rel="stylesheet" href="css/main.css"/>
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<script src="https://checkout.stripe.com/checkout.js"></script>
+</head>
+
+<body>
+<div data-role="page" id="home" data-theme="b">
+<div data-role="header" data-theme="b"> <a href="iphone_main.php" data-icon="home" data-iconpos="notext" data-ajax="false">Menu</a>
+  <h1>London Craft Beer</h1>
+</div>
+<div data-role="main" class="ui-content">
+  <div align="center" id="thankyouPayment"></div>
+	<h2>Payment</h2>
+	<p>Thanks, your booking is confirmed!</p>
+	<p>Why not book a £20 voucher for your visit? Click the button below to make your order!</p>
+  <button id="customButton">Purchase</button>
+  <script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+  
+  token: function(token) {
+	
+	if(token.id){
+	$("#thankyouPayment").html("Thank you, your payment was succesful! Enjoy your vouchers");
+	  }
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'London Craft Beer',
+    description: '£20 Bar Voucher',
+	currency: 'gbp',
+    amount: 2000
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script> 
+</div>
+</body>
+</html>

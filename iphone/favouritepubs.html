@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Create Account</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="css/themes/MainTheme.css" />
+<link rel="stylesheet" href="css/main.css" />
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+</head>
+<body>
+<div data-role="page" id="home" data-theme="b" > 
+      <div data-role="panel" data-position-fixed="true" id="menu" data-display="overlay">
+    <ul data-role="listview">
+      <li data-icon="false"><a href="#" id="menuheadera" ></a></li>
+      <li data-icon="false"><a href="#" id="menuheaderb" >Username</a></li>
+      <li><a href="homepage.html" class="ui-btn ui-btn-icon-left ui-icon-home ui-alt-icon ui-nodisc-icon" id="menutesthome">Home</a></li>
+      <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-location ui-alt-icon ui-nodisc-icon" id="menutestpoints">Your Points</a></li>
+      <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-heart ui-alt-icon ui-nodisc-icon" id="menutestfavs">Favourite Pubs</a></li>
+      <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-info ui-alt-icon ui-nodisc-icon" id="menutestrules">Game Rules</a></li>
+      <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-gear ui-alt-icon ui-nodisc-icon" id="menutestsett">Settings & Newsletter</a></li>
+      <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-power ui-alt-icon ui-nodisc-icon" id="menutestlog">Log Out</a></li>
+    </ul>
+  </div>
+     <div data-role="header" data-theme="b"> <a href="#menu" data-icon="bars" data-iconpos="notext" >Menu</a>
+    <h1>London Craft Beer</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <h1 id="create-header">Favourite Pubs </h1>
+    <div style="text-align: left">
+      <h4>Account Settings</h4>
+	</div>
+    <label for="txt-username-create" id="txt-username-lbl">Username</label>
+    <input type="text" name="txt-username-create" id="txt-username-create" value="" placeholder="eg. John Smith">
+      
+    <a href="#" id="btn-submit" class="ui-btn ui-btn-b">SAVE CHANGES</a>
+      
+      <h4>Newsletter Settings</h4>
+      <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c">
+      <label for="checkbox-h-2c">I wish to receive a copy of the monthly newsletter</label>
+          <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-b">Send a copy now</a>
+      
+   </div>
+    
+
+<div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px; align:center;">
+    <div data-role="header" data-theme="a">
+    </div>
+    <div role="main" class="ui-content">
+            <h1 id="create-header">Send the newsletter</h1>
+        <p class="ui-title" align="center">Are you sure you want to send the current copy of the newsletter to<br><br>
+            johnsmith@hotmail.com
+        </p>
+        <div align="center">
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow" style="background:#486b7e;">Send</a>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>    
+        </div>
+        </div>
+</div>
+  <!-- Homepage Content Ends -->
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>London Craft Beers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!--<script src="custom_javascript/poimap.js"></script>-->
+<script src="custom_javascript/homepage.js"></script>
+<script src="custom_javascript/database.js"></script>
+<script src="custom_javascript/poimapbook.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMj5TM5FdebiCXViMgVwZvs5ZTjpxr0X0&callback=initMap"></script> 
+
+<link rel="stylesheet" href="css/themes/MainTheme.css" />
+<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body id="poimap">
+<div data-role="page" id="poimap" >
+  <!-- Poimap Header Content Starts -->
+  <div id="londoncraftbeer" data-role="header" data-theme="b" data-add-back-btn="true" data-direction="reverse">
+    <h1>London Craft Beer</h1>
+  </div>
+  <!-- Poimap Header Content Ends -->
+  
+  <!-- Poimap Content Starts -->
+  <div data-role="main" class="ui-content"> </div>
+  	
+  </div>
+  
+  <div id="poiheader">
+	Pubs near<span id="pubs-area"></span>
+  </div>
+   
+     <div id="map">
+     <!-- Load map here with Google API -->
+   
+ <script>
+      function initMap() {
+        var uluru = {lat: lati, lng: longi}; // Dependent on user choice
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 19, // Show the location up close
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    </div>
+    
+  <div id="poi-map" data-role="collapsible-set" data-inset="false">
+  <!-- Generate acordion -->  	
+  </div>
+
+<!-- Footer to be used in every page. -->
+<div data-role="footer" data-position="fixed">
+<h4>London Craft Beer</h4>
+<h4>&copy; 2016 All rights reserved.</h4>
+</div>
+
+<!-- POI Map Content Ends -->
+</body>
+</html>
